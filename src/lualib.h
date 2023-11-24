@@ -48,5 +48,7 @@ LUAMOD_API int (luaopen_package) (lua_State *L);
 /* open all previous libraries */
 LUALIB_API void (luaL_openlibs) (lua_State *L);
 
+// 我们添加的test库
+int lua_opentest(lua_State* L);
 
 #endif

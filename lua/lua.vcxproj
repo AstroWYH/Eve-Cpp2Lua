@@ -24,6 +24,11 @@
   <ItemGroup>
     <ClInclude Include="..\src\lua.h" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\lualib\lualib.vcxproj">
+      <Project>{04b9b87d-6c3d-46dc-af18-5f9d14a75eef}</Project>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>

@@ -30,5 +30,6 @@ D:\ue\project\LuaC\LuaDemo\src\lundump.c;D:\ue\project\LuaC\LuaDemo\lualib\x64\D
 D:\ue\project\LuaC\LuaDemo\src\lutf8lib.c;D:\ue\project\LuaC\LuaDemo\lualib\x64\Debug\lutf8lib.obj
 D:\ue\project\LuaC\LuaDemo\src\lvm.c;D:\ue\project\LuaC\LuaDemo\lualib\x64\Debug\lvm.obj
 D:\ue\project\LuaC\LuaDemo\src\lzio.c;D:\ue\project\LuaC\LuaDemo\lualib\x64\Debug\lzio.obj
+D:\ue\project\LuaC\LuaDemo\src\testlib.c;D:\ue\project\LuaC\LuaDemo\lualib\x64\Debug\testlib.obj
 D:\ue\project\LuaC\LuaDemo\lualib\lualib.cpp;D:\ue\project\LuaC\LuaDemo\lualib\x64\Debug\lualib.obj
 D:\ue\project\LuaC\LuaDemo\lualib\pch.cpp;D:\ue\project\LuaC\LuaDemo\lualib\x64\Debug\pch.obj
