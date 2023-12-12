@@ -50,7 +50,7 @@ static const luaL_Reg loadedlibs[] = {
   {LUA_MATHLIBNAME, luaopen_math},
   {LUA_UTF8LIBNAME, luaopen_utf8},
   {LUA_DBLIBNAME, luaopen_debug},
-  {"test", lua_opentest},
+  {"test", lua_opentest}, // 我们添加的test库
   {NULL, NULL}
 };
 

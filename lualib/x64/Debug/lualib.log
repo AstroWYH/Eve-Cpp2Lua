@@ -1,2 +1,14 @@
-﻿  testlib.c
+﻿  lbaselib.c
+  lcorolib.c
+  ldblib.c
+  linit.c
+  liolib.c
+  lmathlib.c
+  loadlib.c
+  loslib.c
+  lstrlib.c
+  ltablib.c
+  lutf8lib.c
+  testlib.c
+  Generating Code...
   lualib.vcxproj -> D:\ue\project\LuaC\LuaDemo\x64\Debug\lualib.lib
