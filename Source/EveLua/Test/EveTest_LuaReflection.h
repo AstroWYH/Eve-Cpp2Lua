@@ -1,4 +1,6 @@
-﻿#pragma once
+﻿// Copyright Night Gamer, Inc. All Rights Reserved.
+
+#pragma once
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"

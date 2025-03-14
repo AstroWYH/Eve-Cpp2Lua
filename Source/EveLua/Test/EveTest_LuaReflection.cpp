@@ -1,4 +1,6 @@
-﻿#include "EveTest_LuaReflection.h"
+﻿// Copyright Night Gamer, Inc. All Rights Reserved.
+
+#include "EveTest_LuaReflection.h"
 #include "Kismet/KismetSystemLibrary.h"
 
 // 构造函数实现

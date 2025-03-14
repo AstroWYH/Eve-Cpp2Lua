@@ -1,4 +1,6 @@
-﻿#pragma once
+﻿// Copyright Night Gamer, Inc. All Rights Reserved.
+
+#pragma once
 
 #include "CoreMinimal.h"
 #include "EveReflectionManager.h"
@@ -27,10 +29,8 @@ public:
 
 	static int Lua_Print(lua_State* L);
 	static int LuaCallMemberFunction(lua_State* L);
-	
+
 	void PushObjectToLua(AActor* Object);
-
-
 
 private:
 	lua_State* LuaState;

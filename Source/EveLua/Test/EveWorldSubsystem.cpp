@@ -1,9 +1,7 @@
-﻿// Fill out your copyright notice in the Description page of Project Settings.
-
+﻿// Copyright Night Gamer, Inc. All Rights Reserved.
 
 #include "EveWorldSubsystem.h"
 
-#include "EveTest_LuaLib.h"
 #include "EveLuaManager.h"
 
 #include "EveTest_LuaReflection.h"
@@ -13,20 +11,20 @@ void UEveWorldSubsystem::OnWorldBeginPlay(UWorld& InWorld)
 	Super::OnWorldBeginPlay(InWorld);
 
 	if (!(InWorld.GetName() == "DefaultMap")) return;
-	
+
 	EveLuaManager LuaManager;
 
 	if (LuaManager.Initialize())
 	{
 		// 示例1
-		// const char* LuaScript = "print('[wyh] Hello from Lua!')";
+		// const char* LuaScript = "print('[LuaLog] Hello from Lua!')";
 		// if (LuaManager.ExecuteLuaScript(LuaScript))
 		// {
-		// 	UE_LOG(LogTemp, Display, TEXT("[wyh] OK"));
+		// 	UE_LOG(LogTemp, Display, TEXT("[LuaLog] OK"));
 		// }
 		// else
 		// {
-		// 	UE_LOG(LogTemp, Display, TEXT("[wyh] Not OK"));
+		// 	UE_LOG(LogTemp, Display, TEXT("[LuaLog] Not OK"));
 		// }
 
 		// 示例2
@@ -44,22 +42,22 @@ void UEveWorldSubsystem::OnWorldBeginPlay(UWorld& InWorld)
 					if reflectionInstance then
 					    local result = CallMemberFunction(reflectionInstance, "Add", 2, 3)
 					    if result then
-					        print("[wyh] Add result: " .. result)
+					        print("[LuaLog] Add result: " .. result)
 					    else
-					        print("[wyh] CallMemberFunction returned nil.")
+					        print("[LuaLog] CallMemberFunction returned nil.")
 					    end
 					else
-					    print("[wyh] reflectionInstance is nil.")
+					    print("[LuaLog] reflectionInstance is nil.")
 					end
                 )";
 
 				if (LuaManager.ExecuteLuaScript(LuaScriptObj))
 				{
-					UE_LOG(LogTemp, Display, TEXT("[wyh] OK"));
+					UE_LOG(LogTemp, Display, TEXT("[LuaLog] OK"));
 				}
 				else
 				{
-					UE_LOG(LogTemp, Display, TEXT("[wyh] Not OK"));
+					UE_LOG(LogTemp, Display, TEXT("[LuaLog] Not OK"));
 				}
 			}
 		}

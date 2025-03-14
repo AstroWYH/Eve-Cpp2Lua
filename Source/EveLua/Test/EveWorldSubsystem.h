@@ -1,4 +1,4 @@
-﻿// Fill out your copyright notice in the Description page of Project Settings.
+﻿// Copyright Night Gamer, Inc. All Rights Reserved.
 
 #pragma once
 
@@ -6,9 +6,6 @@
 #include "Subsystems/WorldSubsystem.h"
 #include "EveWorldSubsystem.generated.h"
 
-/**
- * 
- */
 UCLASS()
 class EVELUA_API UEveWorldSubsystem : public UWorldSubsystem
 {
