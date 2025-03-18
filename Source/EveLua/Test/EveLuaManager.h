@@ -1,6 +1,4 @@
-﻿// Copyright Night Gamer. All Rights Reserved.
-
-#pragma once
+﻿#pragma once
 
 #include "CoreMinimal.h"
 
@@ -27,11 +25,11 @@ public:
 	}
 
 	static int Lua_Print(lua_State* L);
-	static int LuaCallMemberFunction(lua_State* L);
+	static int Lua_CallMemberFunction(lua_State* L);
+	static int Lua_SpawnActor(lua_State* L);
 
 	void PushObjectToLua(AActor* Object);
 
 private:
 	lua_State* LuaState;
-
 };

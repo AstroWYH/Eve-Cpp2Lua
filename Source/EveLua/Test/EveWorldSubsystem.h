@@ -1,6 +1,4 @@
-﻿// Copyright Night Gamer. All Rights Reserved.
-
-#pragma once
+﻿#pragma once
 
 #include "CoreMinimal.h"
 #include "Subsystems/WorldSubsystem.h"
@@ -13,4 +11,7 @@ class EVELUA_API UEveWorldSubsystem : public UWorldSubsystem
 
 public:
 	virtual void OnWorldBeginPlay(UWorld& InWorld) override;
+
+private:
+	bool LoadLuaScript(const FString& FilePath, FString& OutScript);
 };
