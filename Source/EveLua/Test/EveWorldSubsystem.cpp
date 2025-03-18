@@ -5,7 +5,7 @@
 #include "Misc/FileHelper.h"
 #include "Misc/Paths.h"
 
-// 世界开始播放时调用
+// 世界开始时调用
 void UEveWorldSubsystem::OnWorldBeginPlay(UWorld& InWorld)
 {
 	Super::OnWorldBeginPlay(InWorld);

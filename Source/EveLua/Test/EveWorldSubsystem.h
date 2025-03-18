@@ -7,7 +7,7 @@
 #include "EveWorldSubsystem.generated.h"
 
 /**
- * UEveWorldSubsystem 类，继承自 UWorldSubsystem，用于在世界开始播放时执行 Lua 脚本。
+ * UEveWorldSubsystem 类，继承自 UWorldSubsystem，用于在世界开始时执行 Lua 脚本。
  */
 UCLASS()
 class EVELUA_API UEveWorldSubsystem : public UWorldSubsystem
@@ -16,7 +16,7 @@ class EVELUA_API UEveWorldSubsystem : public UWorldSubsystem
 
 public:
 	/**
-	 * 世界开始播放时调用。
+	 * 世界开始时调用。
 	 * @param InWorld 当前世界引用
 	 */
 	virtual void OnWorldBeginPlay(UWorld& InWorld) override;
