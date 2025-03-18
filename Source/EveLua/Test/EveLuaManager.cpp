@@ -230,13 +230,3 @@ int EveLuaManager::Lua_SpawnActor(lua_State* L)
     lua_pushlightuserdata(L, NewActor);
     return 1;
 }
-
-// 将 C++ 对象指针压入 Lua 栈
-void EveLuaManager::PushObjectToLua(AActor* Object)
-{
-    if (LuaState && Object)
-    {
-        // 将对象指针压入 Lua 栈
-        lua_pushlightuserdata(LuaState, Object);
-    }
-}    

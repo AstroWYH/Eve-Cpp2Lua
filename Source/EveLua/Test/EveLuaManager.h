@@ -66,12 +66,6 @@ public:
 	 */
 	static int Lua_SpawnActor(lua_State* L);
 
-	/**
-	 * 将 C++ 对象指针压入 Lua 栈。
-	 * @param Object 要压入的 C++ 对象指针
-	 */
-	void PushObjectToLua(AActor* Object);
-
 private:
 	// Lua 状态指针
 	lua_State* LuaState;
