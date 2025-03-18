@@ -22,7 +22,7 @@ void UEveWorldSubsystem::OnWorldBeginPlay(UWorld& InWorld)
 		{
 			if (LuaManager.ExecuteLuaScript(TCHAR_TO_UTF8(*LuaScript)))
 			{
-				UE_LOG(LogTemp, Display, TEXT("[Eve-Log-Cpp] Lua script executed successfully"));
+				UE_LOG(LogTemp, Log, TEXT("[Eve-Log-Cpp] Lua script executed successfully"));
 			}
 			else
 			{

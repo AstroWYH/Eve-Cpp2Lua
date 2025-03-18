@@ -105,7 +105,7 @@ int EveLuaManager::Lua_Print(lua_State* L)
         }
     }
     // 输出日志
-    UE_LOG(LogTemp, Display, TEXT("[Eve-Log-Cpp] %s"), *Output);
+    UE_LOG(LogTemp, Log, TEXT("%s"), *Output);
     return 0;
 }
 
