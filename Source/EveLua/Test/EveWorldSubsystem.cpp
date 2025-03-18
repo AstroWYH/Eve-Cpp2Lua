@@ -1,10 +1,10 @@
-﻿// Copyright Night Gamer, Inc. All Rights Reserved.
+﻿// Copyright Night Gamer. All Rights Reserved.
 
 #include "EveWorldSubsystem.h"
 
 #include "EveLuaManager.h"
 
-#include "EveTest_LuaReflection.h"
+#include "EveLuaActor.h"
 
 void UEveWorldSubsystem::OnWorldBeginPlay(UWorld& InWorld)
 {
@@ -17,22 +17,22 @@ void UEveWorldSubsystem::OnWorldBeginPlay(UWorld& InWorld)
 	if (LuaManager.Initialize())
 	{
 		// 示例1
-		// const char* LuaScript = "print('[LuaLog] Hello from Lua!')";
-		// if (LuaManager.ExecuteLuaScript(LuaScript))
-		// {
-		// 	UE_LOG(LogTemp, Display, TEXT("[LuaLog] OK"));
-		// }
-		// else
-		// {
-		// 	UE_LOG(LogTemp, Display, TEXT("[LuaLog] Not OK"));
-		// }
+		const char* LuaScript = "Print('[LuaLog] Hello from Lua!')";
+		if (LuaManager.ExecuteLuaScript(LuaScript))
+		{
+			UE_LOG(LogTemp, Display, TEXT("[UELog] OK"));
+		}
+		else
+		{
+			UE_LOG(LogTemp, Display, TEXT("[UELog] Not OK"));
+		}
 
 		// 示例2
-		// 创建 AEveTest_LuaReflection 类的实例
+		// 创建 AEveLuaActor 类的实例
 		UWorld* World = GetWorld();
 		if (World)
 		{
-			AEveTest_LuaReflection* ReflectionInstance = World->SpawnActor<AEveTest_LuaReflection>();
+			AEveLuaActor* ReflectionInstance = World->SpawnActor<AEveLuaActor>();
 			if (ReflectionInstance)
 			{
 				LuaManager.PushObjectToLua(ReflectionInstance);
@@ -53,11 +53,11 @@ void UEveWorldSubsystem::OnWorldBeginPlay(UWorld& InWorld)
 
 				if (LuaManager.ExecuteLuaScript(LuaScriptObj))
 				{
-					UE_LOG(LogTemp, Display, TEXT("[LuaLog] OK"));
+					UE_LOG(LogTemp, Display, TEXT("[UELog] OK"));
 				}
 				else
 				{
-					UE_LOG(LogTemp, Display, TEXT("[LuaLog] Not OK"));
+					UE_LOG(LogTemp, Display, TEXT("[UELog] Not OK"));
 				}
 			}
 		}

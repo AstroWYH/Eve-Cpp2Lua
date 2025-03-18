@@ -1,4 +1,4 @@
-﻿// Copyright Night Gamer, Inc. All Rights Reserved.
+﻿// Copyright Night Gamer. All Rights Reserved.
 
 #pragma once
 

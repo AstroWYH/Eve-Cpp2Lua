@@ -1,8 +1,8 @@
-﻿// Copyright Night Gamer, Inc. All Rights Reserved.
+﻿// Copyright Night Gamer. All Rights Reserved.
 
 #include "EveLuaManager.h"
 
-#include "EveTest_LuaReflection.h"
+#include "EveLuaActor.h"
 #include "Logging/LogMacros.h"
 
 EveLuaManager::EveLuaManager()
@@ -25,14 +25,11 @@ bool EveLuaManager::Initialize()
 	luaL_openlibs(LuaState);
 
 	// 重定向 Lua 的 print 函数
-	lua_pushcfunction(LuaState, Lua_Print);
-	lua_setglobal(LuaState, "print");
+	// lua_pushcfunction(LuaState, Lua_Print);
+	// lua_setglobal(LuaState, "print");
+	lua_register(LuaState, "Print", Lua_Print);
 
 	lua_register(LuaState, "CallMemberFunction", LuaCallMemberFunction);
-
-	// 注册 AEveTest_LuaReflection 类到反射管理类
-	UClass* ReflectionClass = AEveTest_LuaReflection::StaticClass();
-	ReflectionManager.RegisterClass(ReflectionClass);
 
 	return true;
 }

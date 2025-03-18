@@ -1,19 +1,19 @@
-﻿// Copyright Night Gamer, Inc. All Rights Reserved.
+﻿// Copyright Night Gamer. All Rights Reserved.
 
 #pragma once
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-#include "EveTest_LuaReflection.generated.h"
+#include "EveLuaActor.generated.h"
 
 UCLASS()
-class EVELUA_API AEveTest_LuaReflection : public AActor
+class EVELUA_API AEveLuaActor : public AActor
 {
 	GENERATED_BODY()
 
 public:
 	// 构造函数
-	AEveTest_LuaReflection();
+	AEveLuaActor();
 
 	// 成员变量
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "LuaReflection")

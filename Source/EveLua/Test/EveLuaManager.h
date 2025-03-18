@@ -1,9 +1,8 @@
-﻿// Copyright Night Gamer, Inc. All Rights Reserved.
+﻿// Copyright Night Gamer. All Rights Reserved.
 
 #pragma once
 
 #include "CoreMinimal.h"
-#include "EveReflectionManager.h"
 
 // 添加 Lua 头文件包含
 extern "C" {
@@ -35,5 +34,4 @@ public:
 private:
 	lua_State* LuaState;
 
-	FEveReflectionManager ReflectionManager;
 };
