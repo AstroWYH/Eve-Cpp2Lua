@@ -22,16 +22,16 @@ void UEveWorldSubsystem::OnWorldBeginPlay(UWorld& InWorld)
 		{
 			if (LuaManager.ExecuteLuaScript(TCHAR_TO_UTF8(*LuaScript)))
 			{
-				UE_LOG(LogTemp, Display, TEXT("[UELog] Lua script executed successfully"));
+				UE_LOG(LogTemp, Display, TEXT("[Eve-Log-Cpp] Lua script executed successfully"));
 			}
 			else
 			{
-				UE_LOG(LogTemp, Error, TEXT("[UELog] Failed to execute Lua script"));
+				UE_LOG(LogTemp, Error, TEXT("[Eve-Log-Cpp] Failed to execute Lua script"));
 			}
 		}
 		else
 		{
-			UE_LOG(LogTemp, Error, TEXT("[UELog] Failed to load Lua script"));
+			UE_LOG(LogTemp, Error, TEXT("[Eve-Log-Cpp] Failed to load Lua script"));
 		}
 
 		// 关闭 Lua 状态

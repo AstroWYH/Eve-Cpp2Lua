@@ -53,7 +53,7 @@ bool EveLuaManager::ExecuteLuaScript(const char* Script)
     {
         // 获取错误信息
         const char* errorMsg = lua_tostring(LuaState, -1);
-        UE_LOG(LogTemp, Error, TEXT("[UELog] Lua error: %s"), UTF8_TO_TCHAR(errorMsg));
+        UE_LOG(LogTemp, Error, TEXT("[Eve-Log-Cpp] Lua error: %s"), UTF8_TO_TCHAR(errorMsg));
         // 弹出错误信息
         lua_pop(LuaState, 1);
         return false;
@@ -105,7 +105,7 @@ int EveLuaManager::Lua_Print(lua_State* L)
         }
     }
     // 输出日志
-    UE_LOG(LogTemp, Display, TEXT("[UELog] %s"), *Output);
+    UE_LOG(LogTemp, Display, TEXT("[Eve-Log-Cpp] %s"), *Output);
     return 0;
 }
 
@@ -116,7 +116,7 @@ int EveLuaManager::Lua_CallMemberFunction(lua_State* L)
     void* Object = lua_touserdata(L, 1); // 第一个参数是对象实例指针
     if (!Object)
     {
-        UE_LOG(LogTemp, Error, TEXT("[UELog] Invalid object pointer passed to CallMemberFunction"));
+        UE_LOG(LogTemp, Error, TEXT("[Eve-Log-Cpp] Invalid object pointer passed to CallMemberFunction"));
         // 返回 nil 表示错误
         lua_pushnil(L);
         return 1;
@@ -129,7 +129,7 @@ int EveLuaManager::Lua_CallMemberFunction(lua_State* L)
     AActor* Actor = static_cast<AActor*>(Object);
     if (!Actor)
     {
-        UE_LOG(LogTemp, Error, TEXT("[UELog] Failed to cast object pointer to AActor"));
+        UE_LOG(LogTemp, Error, TEXT("[Eve-Log-Cpp] Failed to cast object pointer to AActor"));
         // 返回 nil 表示错误
         lua_pushnil(L);
         return 1;
@@ -141,7 +141,7 @@ int EveLuaManager::Lua_CallMemberFunction(lua_State* L)
     UFunction* Function = Class->FindFunctionByName(FName(FunctionNameStr));
     if (!Function)
     {
-        UE_LOG(LogTemp, Error, TEXT("[UELog] Function %s not found in class %s"), UTF8_TO_TCHAR(FunctionNameStr), *Class->GetName());
+        UE_LOG(LogTemp, Error, TEXT("[Eve-Log-Cpp] Function %s not found in class %s"), UTF8_TO_TCHAR(FunctionNameStr), *Class->GetName());
         // 返回 nil 表示函数未找到
         lua_pushnil(L);
         return 1;
@@ -168,13 +168,13 @@ int EveLuaManager::Lua_CallMemberFunction(lua_State* L)
         {
             int32 Value = lua_tointeger(L, Index + 3);
             *Param->ContainerPtrToValuePtr<int32>(Params) = Value;
-            UE_LOG(LogTemp, Log, TEXT("[UELog] Param %d: %d"), Index, *Param->ContainerPtrToValuePtr<int32>(Params));
+            UE_LOG(LogTemp, Log, TEXT("[Eve-Log-Cpp] Param %d: %d"), Index, *Param->ContainerPtrToValuePtr<int32>(Params));
             Index++;
         }
     }
 
     // 调用函数
-    UE_LOG(LogTemp, Log, TEXT("[UELog] Calling Function: %s, NumParams: %d"), *Function->GetName(), NumParams);
+    UE_LOG(LogTemp, Log, TEXT("[Eve-Log-Cpp] Calling Function: %s, NumParams: %d"), *Function->GetName(), NumParams);
     Actor->ProcessEvent(Function, Params);
 
     // 处理返回值
@@ -189,7 +189,7 @@ int EveLuaManager::Lua_CallMemberFunction(lua_State* L)
         }
         else
         {
-            UE_LOG(LogTemp, Error, TEXT("[UELog] Unsupported return type: %s"), *ReturnProp->GetClass()->GetName());
+            UE_LOG(LogTemp, Error, TEXT("[Eve-Log-Cpp] Unsupported return type: %s"), *ReturnProp->GetClass()->GetName());
             // 不支持的返回值类型，返回 nil
             lua_pushnil(L);
         }
@@ -212,7 +212,7 @@ int EveLuaManager::Lua_SpawnActor(lua_State* L)
     UWorld* World = GWorld;
     if (!World)
     {
-        UE_LOG(LogTemp, Error, TEXT("[UELog] World is null"));
+        UE_LOG(LogTemp, Error, TEXT("[Eve-Log-Cpp] World is null"));
         lua_pushnil(L);
         return 1;
     }
@@ -221,7 +221,7 @@ int EveLuaManager::Lua_SpawnActor(lua_State* L)
     AActor* NewActor = World->SpawnActor<AEveLuaActor>();
     if (!NewActor)
     {
-        UE_LOG(LogTemp, Error, TEXT("[UELog] Failed to spawn AEveLuaActor"));
+        UE_LOG(LogTemp, Error, TEXT("[Eve-Log-Cpp] Failed to spawn AEveLuaActor"));
         lua_pushnil(L);
         return 1;
     }
