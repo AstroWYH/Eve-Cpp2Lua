@@ -1,6 +1,6 @@
 # 【UE5 C++】腾讯Unlua青春版 自己实现 一个工程搞懂反射
 
-<img width="1110" height="587" alt="image" src="https://github.com/user-attachments/assets/9da4bb7e-877d-40c8-a257-be13a86b1a82" />
+<img width="1110" height="587" alt="image" src="lua.png" />
 
 ## 项目简介
 
