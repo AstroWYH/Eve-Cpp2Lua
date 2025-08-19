@@ -4,7 +4,7 @@
 
 ## 项目简介
 
-本仓库对应B站视频[【UE5 C++】腾讯Unlua青春版 自己实现 一个工程搞懂反射](https://www.bilibili.com/video/BV1XRX7YCEMG/?spm_id_from=333.788.videopod.sections&vd_source=ab67845b846f1632f14b7e2c4a6c5935)的完整实现工程。旨在通过最小化工程的形式，帮助开发者理解从UE5 C++反射到Lua的底层原理，掌握如何自己实现类似腾讯Unlua的工具，而非直接使用现有方案，助力开发者深入理解UE5反射机制及C++与Lua的交互逻辑。
+本仓库旨在通过最小化工程的形式，帮助开发者理解从UE5 C++反射到Lua的底层原理，掌握如何自己实现类似腾讯Unlua的工具，而非直接使用现有方案，助力开发者深入理解UE5反射机制及C++与Lua的交互逻辑。
 
 ## 核心内容
 
@@ -54,13 +54,6 @@
 - 视频链接：[【UE5 C++】腾讯Unlua青春版 自己实现 一个工程搞懂反射](https://www.bilibili.com/video/BV1...[完整视频链接])
 - 系列教程：查看作者其他UE5 C++教程（背包系统、网络同步、Mass框架等）
 - 参考项目：作者推荐的UE5相关学习项目（如GAS:Lyra、Aura等）
-
-## 作者信息
-
-前华为/百度程序员，专注分享UE5 C++游戏开发实战知识。
-
-- 更多工程与源码：[个人仓库](https://github.com/AstroWYH)
-- B站主页：[晚上做游戏](https://space.bilibili.com/89037636?spm_id_from=333.1007.0.0)
 
 ## 许可证
 
